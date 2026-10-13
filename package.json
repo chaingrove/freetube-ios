@@ -45,7 +45,9 @@
     "pack:renderer": "webpack --mode=production --config-node-env=production --config _scripts/webpack.renderer.config.js",
     "pack:preload": "webpack --mode=production --config-node-env=production --config _scripts/webpack.preload.config.js",
     "pack:web": "webpack --mode=production --config-node-env=production --config _scripts/webpack.web.config.js",
+    "pack:ios": "webpack --mode=production --config-node-env=production --config _scripts/webpack.ios.config.js && pnpm run pack:botGuardScript:ios",
     "pack:botGuardScript": "webpack --config _scripts/webpack.botGuardScript.config.js",
+    "pack:botGuardScript:ios": "webpack --config _scripts/webpack.botGuardScript.config.js --output-path ios/App/App/public",
     "checkforbadtemplates": "node _scripts/findMissingTemplates.mjs"
   },
   "dependencies": {

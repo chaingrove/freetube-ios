@@ -9,11 +9,14 @@
     <link rel="manifest" href="static/manifest.json" />
     <% } %>
     <title></title>
+    <% if (process.env.IS_IOS) { %>
+    <script><%= iosPreloadScript %></script>
+    <% } %>
   </head>
 
   <body>
     <div id="app"></div>
-    <% if (process.env.IS_ELECTRON) { %>
+    <% if (process.env.IS_ELECTRON || process.env.IS_IOS) { %>
     <iframe
       id="sigFrame"
       src="<%= sigFrameSrc %>"

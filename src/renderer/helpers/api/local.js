@@ -33,7 +33,7 @@ if (process.env.SUPPORTS_LOCAL_API) {
         ? crypto.randomUUID()
         : `${Date.now()}-${Math.floor(Math.random() * 10000)}`
 
-      if (process.env.IS_ELECTRON) {
+      if (process.env.IS_ELECTRON || process.env.IS_IOS) {
         const iframe = document.getElementById('sigFrame')
 
         /** @param {MessageEvent} event */
@@ -603,6 +603,21 @@ export async function getLocalVideoInfo(id) {
         JSON.stringify(htmlExtracts.ytConfig)
       )
 
+      player.po_token = contentPoToken
+    } catch (error) {
+      console.error('Local API, poToken generation failed', error)
+      throw error
+    }
+  } else if (process.env.IS_IOS) {
+    try {
+      const result = await window.Capacitor.nativePromise('FreeTubeBridge', 'generatePoToken', {
+        videoId: id,
+        context: JSON.stringify(htmlExtracts.session.context),
+        initialAttestationData: JSON.stringify(htmlExtracts.initialAttestationData),
+        ytConfig: JSON.stringify(htmlExtracts.ytConfig)
+      })
+
+      contentPoToken = result.poToken
       player.po_token = contentPoToken
     } catch (error) {
       console.error('Local API, poToken generation failed', error)
