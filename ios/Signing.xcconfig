@@ -1,0 +1,6 @@
+// Code signing for your own Apple ID. Leave this file as it is: put your values in
+// Signing.local.xcconfig next to it (ignored by git), see ios/README.md.
+DEVELOPMENT_TEAM =
+PRODUCT_BUNDLE_IDENTIFIER = com.example.freetube
+
+#include? "Signing.local.xcconfig"

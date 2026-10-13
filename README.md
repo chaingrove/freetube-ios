@@ -1,3 +1,8 @@
+> [!NOTE]
+> This fork adds an **unofficial iOS build** of FreeTube that you can install on your own iPhone with Xcode. See [ios/README.md](ios/README.md) for how to build it. It is not affiliated with the FreeTube project; the rest of this README is FreeTube's own.
+>
+> This fork modifies FreeTube to add an iOS build (October 2026).
+
 <p align="center">
  <img alt="" src="/_icons/logoColor.svg" width=500 align="center">
 </p>

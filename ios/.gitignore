@@ -1,0 +1,9 @@
+# Built by `pnpm run pack:ios`
+App/App/public
+App/build
+App/DerivedData
+xcuserdata
+.DS_Store
+LoopbackServer/.build
+LoopbackServer/.swiftpm
+Signing.local.xcconfig

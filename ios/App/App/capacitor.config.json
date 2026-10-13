@@ -1,0 +1,17 @@
+{
+	"appId": "com.example.freetube",
+	"appName": "FreeTube",
+	"webDir": "public",
+	"server": {
+		"url": "http://127.0.0.1:17173",
+		"cleartext": true,
+		"allowNavigation": [
+			"127.0.0.1"
+		]
+	},
+	"ios": {
+		"preferredContentMode": "desktop",
+		"overrideUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+	},
+	"packageClassList": []
+}
